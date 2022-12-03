@@ -1,0 +1,36 @@
+{
+  "name": "material-ui-dashboard",
+  "version": "1.0.0",
+  "description": "Dashboard Template",
+  "main": "index.js",
+  "scripts": {
+    "watch": "parcel ./index.html",
+    "build": "parcel build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mui",
+    "react"
+  ],
+  "author": "nick nance",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.29.0",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "parcel": "^2.8.0",
+    "prettier": "^2.8.0",
+    "typescript": "^4.9.3"
+  },
+  "alias": {
+    "react": "preact/compat",
+    "react-dom/test-utils": "preact/test-utils",
+    "react-dom": "preact/compat",
+    "react/jsx-runtime": "preact/jsx-runtime"
+  },
+  "dependencies": {
+    "preact": "^10.11.3"
+  }
+}
