@@ -31,6 +31,10 @@
     "react/jsx-runtime": "preact/jsx-runtime"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.16",
+    "@mui/material": "^5.10.16",
     "preact": "^10.11.3"
   }
 }

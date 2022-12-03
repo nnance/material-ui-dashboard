@@ -1,8 +1,5 @@
 import React from "preact";
 import { render } from "preact/compat";
+import Dashboard from "./Dashboard";
 
-function App() {
-  return <h1>Hello World</h1>;
-}
-
-render(<App />, document.body);
+render(<Dashboard />, document.body);
