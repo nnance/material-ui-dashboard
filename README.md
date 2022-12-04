@@ -8,9 +8,9 @@ An example web application template that represents a administrative dashboard. 
 - prettier
 - eslint
 - parcel bundler
-- preact web framework
+- preact web library
 - material UI components
-- vega
+- vega data visualization
 - react router
 
 ## Usage
