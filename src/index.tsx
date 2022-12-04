@@ -1,5 +1,5 @@
-import React from "preact";
+import * as React from "react";
 import { render } from "preact/compat";
-import Dashboard from "./Dashboard";
+import App from "./App";
 
-render(<Dashboard />, document.body);
+render(<App />, document.body);

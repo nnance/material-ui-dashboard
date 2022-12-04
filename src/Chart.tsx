@@ -1,10 +1,9 @@
-import { useEffect } from "preact/hooks";
 import * as React from "react";
 import Title from "./Title";
 import vegaEmbed from "vega-embed";
 
 export default function Chart() {
-  useEffect(() => {
+  React.useEffect(() => {
     vegaEmbed("#vis", {
       $schema: "https://vega.github.io/schema/vega-lite/v5.json",
       description: "Google's stock price over time.",
