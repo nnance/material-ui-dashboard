@@ -7,10 +7,16 @@ import Drawer from "./Drawer";
 import Dashboard from "./Dashboard";
 import AllOrders from "./AllOrders";
 import { Routes, Route, Outlet } from "react-router-dom";
+import { useState } from "preact/hooks";
 
 const mdTheme = createTheme();
 
-function Layout() {
+interface LayoutProps {
+  title: string;
+}
+
+function Layout(props: LayoutProps) {
+  const { title } = props;
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -19,7 +25,7 @@ function Layout() {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar open={open} toggleDrawer={toggleDrawer} />
+      <AppBar open={open} toggleDrawer={toggleDrawer} title={title} />
       <Drawer open={open} toggleDrawer={toggleDrawer} />
       <Box
         component="main"
@@ -40,12 +46,14 @@ function Layout() {
 }
 
 export default function App() {
+  const [title, setTitle] = useState("Dashboard");
+
   return (
     <ThemeProvider theme={mdTheme}>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Dashboard />} />
-          <Route path="orders" element={<AllOrders />} />
+        <Route path="/" element={<Layout title={title} />}>
+          <Route index element={<Dashboard setTitle={setTitle} />} />
+          <Route path="orders" element={<AllOrders setTitle={setTitle} />} />
         </Route>
       </Routes>
     </ThemeProvider>

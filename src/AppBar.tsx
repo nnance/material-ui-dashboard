@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 const drawerWidth = 240;
 
 interface AppBarProps extends MuiAppBarProps {
+  title: string;
   open: boolean;
   toggleDrawer: () => void;
 }
@@ -34,7 +35,7 @@ const AppBarStyled = styled(MuiAppBar, {
 }));
 
 export default function AppBar(props: AppBarProps) {
-  const { open, toggleDrawer } = props;
+  const { title, open, toggleDrawer } = props;
 
   return (
     <AppBarStyled position="absolute" {...props}>
@@ -62,7 +63,7 @@ export default function AppBar(props: AppBarProps) {
           noWrap
           sx={{ flexGrow: 1 }}
         >
-          Dashboard
+          {title}
         </Typography>
         <IconButton color="inherit">
           <Badge badgeContent={4} color="secondary">

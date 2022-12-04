@@ -6,8 +6,17 @@ import Paper from "@mui/material/Paper";
 import Chart from "./Chart";
 import Deposits from "./Deposits";
 import Orders from "./Orders";
+import { useEffect } from "preact/hooks";
 
-export default function Dashboard() {
+interface DashboardProps {
+  setTitle: (title: string) => void;
+}
+
+export default function Dashboard(props: DashboardProps) {
+  useEffect(() => {
+    props.setTitle("Dashboard");
+  }, [props]);
+
   return (
     <React.Fragment>
       <Toolbar />

@@ -4,8 +4,17 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Orders from "./Orders";
+import { useEffect } from "preact/hooks";
 
-export default function AllOrders() {
+interface AllOrdersProps {
+  setTitle: (title: string) => void;
+}
+
+export default function AllOrders(props: AllOrdersProps) {
+  useEffect(() => {
+    props.setTitle("Orders");
+  }, [props]);
+
   return (
     <React.Fragment>
       <Toolbar />
