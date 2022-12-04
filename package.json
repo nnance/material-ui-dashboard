@@ -38,6 +38,7 @@
     "@mui/icons-material": "^5.10.16",
     "@mui/material": "^5.10.16",
     "preact": "^10.11.3",
+    "react-router-dom": "^6.4.4",
     "vega": "^5.22.1",
     "vega-embed": "^6.21.0",
     "vega-lite": "^5.6.0"
