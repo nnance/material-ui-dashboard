@@ -23,25 +23,27 @@ function Layout(props: LayoutProps) {
   };
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <AppBar open={open} toggleDrawer={toggleDrawer} title={title} />
-      <Drawer open={open} toggleDrawer={toggleDrawer} />
-      <Box
-        component="main"
-        sx={{
-          backgroundColor: (theme) =>
-            theme.palette.mode === "light"
-              ? theme.palette.grey[100]
-              : theme.palette.grey[900],
-          flexGrow: 1,
-          height: "100vh",
-          overflow: "auto",
-        }}
-      >
-        <Outlet />
+    <ThemeProvider theme={mdTheme}>
+      <Box sx={{ display: "flex" }}>
+        <CssBaseline />
+        <AppBar open={open} toggleDrawer={toggleDrawer} title={title} />
+        <Drawer open={open} toggleDrawer={toggleDrawer} />
+        <Box
+          component="main"
+          sx={{
+            backgroundColor: (theme) =>
+              theme.palette.mode === "light"
+                ? theme.palette.grey[100]
+                : theme.palette.grey[900],
+            flexGrow: 1,
+            height: "100vh",
+            overflow: "auto",
+          }}
+        >
+          <Outlet />
+        </Box>
       </Box>
-    </Box>
+    </ThemeProvider>
   );
 }
 
@@ -49,13 +51,11 @@ export default function App() {
   const [title, setTitle] = useState("Dashboard");
 
   return (
-    <ThemeProvider theme={mdTheme}>
-      <Routes>
-        <Route path="/" element={<Layout title={title} />}>
-          <Route index element={<Dashboard setTitle={setTitle} />} />
-          <Route path="orders" element={<AllOrders setTitle={setTitle} />} />
-        </Route>
-      </Routes>
-    </ThemeProvider>
+    <Routes>
+      <Route path="/" element={<Layout title={title} />}>
+        <Route index element={<Dashboard setTitle={setTitle} />} />
+        <Route path="orders" element={<AllOrders setTitle={setTitle} />} />
+      </Route>
+    </Routes>
   );
 }
